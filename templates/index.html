@@ -16,7 +16,6 @@
     <style>
         html, body{
             background-color: #15B7B9;
-            font-family: 'Fjalla One';
         }
         .upText {
             border-color: #15B7B9;
@@ -41,6 +40,9 @@
             max-height: 100vh;
             display: block;
         }
+        .navbar-brand{
+            font-family: 'Fjalla One';
+        }
     </style>
   </head>
   <body>
@@ -52,10 +54,9 @@
         <div id="map" class="main" style="height: 100vh"></div>
 
         <div class="fixed-bottom p-1 text-center" style="background-color: #15B7B9;">
-            <span class="badge badge-pill badge-danger">확진자</span>
-            <span class="badge badge-pill badge-dark">사망자</span>
-            <span class="badge badge-pill badge-warning">검사진행</span>
-            <span class="badge badge-pill badge-primary">격리해제</span>
+            {% for items in data %}
+                <span class="badge badge-{{items.tag}}">{{items.name}} : {{items.count}}</span>
+            {% endfor %}
         </div>
     </div>
     <!-- Optional JavaScript -->
