@@ -13,7 +13,6 @@ app = Flask(__name__)
 app.debug = True
 @app.route("/")
 def home():
-    print(GetLocCount())
     return render_template('index.html', data=GetTotalCount())
 
 def GetTotalCount():
@@ -24,7 +23,7 @@ def GetTotalCount():
     #data = soup.select('.s_listin_dot > li')[0:4]
     result = list()
     for x in data:
-        result.append(x.get_text().replace(',','').split(' ')[-1].replace('명', ''))
+        result.append(x.get_text().replace(',','').replace('명', ''))
     data = [
         {'name' : '확진자'   , 'tag' : 'danger'  , 'count' : result[0]},
         {'name' : '사망자'   , 'tag' : 'dark'    , 'count' : result[2]},
@@ -52,7 +51,17 @@ def GetLocCount():
     location = location[1:-1]
     count    = count[1:-1]
     data = dict(zip(location, count))
+    return data
+
+def geoCoding(getData):
+    data = {
+        "positions" : []
+        }
 
     print(data)
+    print(getData)
+
+
 if __name__ == "__main__":
+    geoCoding(GetLocCount())
     app.run(host="localhost", port=8080, use_reloader=False)

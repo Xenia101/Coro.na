@@ -53,7 +53,7 @@
 
     <div class="container no-padding">
         <div id="map" class="main" style="height: 100vh"></div>
-f
+
         <div class="fixed-bottom p-1 text-center" style="background-color: #15B7B9;">
             {% for items in data %}
                 <span class="badge badge-{{items.tag}}">{{items.name}} : {{items.count}}</span>
@@ -72,6 +72,15 @@ f
                 level: 13
             };
         var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+        var geocoder = new kakao.maps.services.Geocoder();
+
+        geocoder.addressSearch('서울', function(result, status) {
+            if (status === kakao.maps.services.Status.OK) {
+                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                console.log(coords);
+            } 
+        });    
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
