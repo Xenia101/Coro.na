@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
     <title>Coro.na</title>
 
@@ -58,10 +59,29 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content text-center">
             <div class="modal-header" style="margin: 0 auto; border-bottom: 0 none;">
-              <h5 class="modal-title" id="infoModaltitle">CORO.NA</h5>
+              <h5 class="modal-title" id="infoModaltitle" style="color:#15B7B9">CORO.NA</h5>
             </div>
             <div class="modal-body">
-              ...
+                <div style="font-size: 12px">
+                    <strong>주요증상</strong><br>
+                    발열 또는 호흡기 증상(기침, 인후통)<br><br>
+                    <strong>관련정보</strong><br>
+                    <a href="http://www.mohw.go.kr/react/popup_200128_2.html">검체채취 가능 진료소</a><br>
+                    <a href="https://news.naver.com/main/factcheck/main.nhn?section=%C4%DA%B7%CE%B3%AA+%B9%D9%C0%CC%B7%AF%BD%BA">SNU 팩트체크</a><br>
+                    <a href="http://ncov.mohw.go.kr/tcmBoardList.do">보도자료</a>
+                    <br><br>
+                    <a id="kakao-link-btn" href="javascript:sendLink()">
+                        <img style="width: 35px;" src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+                    </a>
+                </div><br>
+
+                <div>
+                    <small>
+                        <strong>출처</strong>&nbsp;&nbsp;&nbsp;&nbsp; 질병관리본부<br>
+                        <strong>지도</strong>&nbsp; Kakao Map API<br>
+                        <span style="color:#15B7B9">Developed by <strong>XENIA</strong></span>
+                    </small><br>
+                </div>
             </div>
             <div class="modal-footer text-center" style="margin: 0 auto; border-top: 0 none;">
                 <button type="button" class="btn btn-sm btn-outline-dark" data-dismiss="modal">닫기</button>
@@ -100,9 +120,6 @@
             {% for items in data %}
                 <span class="badge badge-{{items.tag}}">{{items.name}} : {{items.count}}</span>
             {% endfor %}
-            <div>
-                <small style="color:white">Developed by <strong>XENIA</strong>&nbsp;&nbsp; <strong>출처</strong> 질병관리본부</small>
-            </div>
         </div>
     </div>
     <!-- Optional JavaScript -->
@@ -141,6 +158,49 @@
             clusterer.addMarkers(markers);
         });  
     </script>
+
+<script type='text/javascript'>
+    //<![CDATA[
+      // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init('2762b6da866db6cc165f556670ed4a51');
+      // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+      function sendLink() {
+        Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: 'CORO.NA',
+            description: '#코로나19 #현황 #지도 #호서대 #화이팅',
+            imageUrl: '../static/logo.png',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com'
+            }
+          },
+          social: {
+            likeCount: 0,
+            commentCount: 0,
+            sharedCount: 0
+          },
+          buttons: [
+            {
+              title: '웹으로 보기',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com'
+              }
+            },
+            {
+              title: '앱으로 보기',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com'
+              }
+            }
+          ]
+        });
+      }
+    //]]>
+  </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
