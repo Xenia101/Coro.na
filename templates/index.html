@@ -38,21 +38,24 @@
         .main {
             overflow-x: hidden;
             overflow-y: scroll;
-            max-height: calc(100vh - 100px);
+            max-height: 100vh;
             display: block;
         }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light" style="background-color: #15B7B9!important; margin-bottom: 1px;">
-        <a class="navbar-brand" style="color:white;">Coro.na</a>
+        <a class="navbar-brand" style="color:white;">CORO.NA</a>
     </nav>
 
     <div class="container no-padding">
         <div id="map" class="main" style="height: 100vh"></div>
 
-        <div class="fixed-bottom p-1" style="background-color: #15B7B9;">
-            Footer
+        <div class="fixed-bottom p-1 text-center" style="background-color: #15B7B9;">
+            <span class="badge badge-pill badge-danger">확진자</span>
+            <span class="badge badge-pill badge-dark">사망자</span>
+            <span class="badge badge-pill badge-warning">검사진행</span>
+            <span class="badge badge-pill badge-primary">격리해제</span>
         </div>
     </div>
     <!-- Optional JavaScript -->
@@ -63,7 +66,7 @@
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = { 
-                center: new kakao.maps.LatLng(36.73830422060987, 127.51734211153982),
+                center: new kakao.maps.LatLng(35.500375967591494, 127.86952137759117),
                 level: 13
             };
         var map = new kakao.maps.Map(mapContainer, mapOption); 
