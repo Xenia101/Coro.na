@@ -15,6 +15,7 @@
 
     <style>
         html, body{
+            overflow: hidden;
             background-color: #15B7B9;
         }
         .upText {
@@ -36,7 +37,7 @@
         }
         .main {
             overflow-x: hidden;
-            overflow-y: scroll;
+            overflow-y: hidden;
             max-height: 100vh;
             display: block;
         }
@@ -52,7 +53,7 @@
 
     <div class="container no-padding">
         <div id="map" class="main" style="height: 100vh"></div>
-
+f
         <div class="fixed-bottom p-1 text-center" style="background-color: #15B7B9;">
             {% for items in data %}
                 <span class="badge badge-{{items.tag}}">{{items.name}} : {{items.count}}</span>
@@ -63,7 +64,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2762b6da866db6cc165f556670ed4a51"></script>
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = { 
