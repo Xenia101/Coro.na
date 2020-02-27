@@ -64,23 +64,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=&libraries=clusterer"></script>
     <script>
         var mapContainer = document.getElementById('map'),
             mapOption = { 
-                center: new kakao.maps.LatLng(35.500375967591494, 127.86952137759117),
+                center: new kakao.maps.LatLng(35.350375967591494, 127.86952137759117),
+                minLevel: 12,
+                maxLevel: 13,
                 level: 13
             };
         var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-        var geocoder = new kakao.maps.services.Geocoder();
-
-        geocoder.addressSearch('서울', function(result, status) {
-            if (status === kakao.maps.services.Status.OK) {
-                var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-                console.log(coords);
-            } 
-        });    
+        var clusterer = new kakao.maps.MarkerClusterer({
+            map: map,
+            averageCenter: true, 
+            minLevel: 10
+        });
+    
+        $.getJSON("http://localhost:8080/location", function(data) {
+            var markers = $(data.positions).map(function(i, position) {
+                return new kakao.maps.Marker({
+                    position : new kakao.maps.LatLng(position.lat, position.lng)
+                });
+            });
+            clusterer.addMarkers(markers);
+        });  
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

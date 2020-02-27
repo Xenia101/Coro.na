@@ -53,15 +53,50 @@ def GetLocCount():
     data = dict(zip(location, count))
     return data
 
-def geoCoding(getData):
+@app.route("/location")
+def geoCoding():
+    getData = GetLocCount()
     data = {
         "positions" : []
         }
-
-    print(data)
-    print(getData)
-
+    for k,v in getData.items():
+        for x in range(v):
+            if k == '서울':
+                data['positions'].append({"lat":37.578623, "lng":126.988169})
+            elif k == '부산':
+                data['positions'].append({"lat":35.154887, "lng":129.056005})
+            elif k == '대구':
+                data['positions'].append({"lat":35.865870, "lng":128.591657})
+            elif k == '인천':
+                data['positions'].append({"lat":37.469301, "lng":126.700092})
+            elif k == '광주':
+                data['positions'].append({"lat":35.155374, "lng":126.835550})
+            elif k == '대전':
+                data['positions'].append({"lat":36.336850, "lng":127.394787})
+            elif k == '울산':
+                data['positions'].append({"lat":35.549282, "lng":129.261149})
+            elif k == '세종':
+                data['positions'].append({"lat":36.510528, "lng":127.255707})
+            elif k == '경기':
+                data['positions'].append({"lat":37.388105, "lng":127.268598})
+            elif k == '강원':
+                data['positions'].append({"lat":37.973851, "lng":128.313189})
+            elif k == '충북':
+                data['positions'].append({"lat":36.917677, "lng":127.823951})
+            elif k == '충남':
+                data['positions'].append({"lat":36.655106, "lng":126.790957})
+            elif k == '전북':
+                data['positions'].append({"lat":35.779773, "lng":127.091941})
+            elif k == '전남':
+                data['positions'].append({"lat":34.636756, "lng":126.695257})
+            elif k == '경북':
+                data['positions'].append({"lat":36.238331, "lng":128.881892})
+            elif k == '경남':
+                data['positions'].append({"lat":35.414577, "lng":128.226232})
+            elif k == '제주':
+                data['positions'].append({"lat":33.489764, "lng":126.527679})
+    data = json.dumps(data, indent=2)
+    return data
 
 if __name__ == "__main__":
-    geoCoding(GetLocCount())
     app.run(host="localhost", port=8080, use_reloader=False)
