@@ -12,3 +12,5 @@ A Web Map Service for the Corona-virus
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/img2.PNG?raw=true">
   <img width="300px"src="https://github.com/Xenia101/Coro.na/blob/master/img/img3.PNG?raw=true">
 </p>
+
+> This image is of South Korea, February 8, 2020.
