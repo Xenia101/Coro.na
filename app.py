@@ -47,7 +47,7 @@ def GetLocCount():
         location.append(loc[0])
         cols = row.find_all('td')
         cols = [ele.text.strip() for ele in cols]
-        count.append(int(cols[0].replace(',','')))
+        count.append(int(cols[1].replace(',','')))
     location = location[1:-1]
     count    = count[1:-1]
     data = dict(zip(location, count))
