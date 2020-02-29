@@ -1,6 +1,6 @@
 # Coro.na
 
-A Web Map Service for the Corona-virus
+A Web **Map** Service for the **Corona-virus**
 
 <p align=center>
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/img4.PNG?raw=true">
