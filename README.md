@@ -13,6 +13,34 @@ Map API : [Kakao Map](http://apis.map.kakao.com/)
 
 ## Example
 
+```javascript
+<script>
+        var mapContainer = document.getElementById('map'),
+            mapOption = { 
+                center: new kakao.maps.LatLng(35.350375967591494, 127.86952137759117),
+                minLevel: 12,
+                maxLevel: 13,
+                level: 13
+            };
+        var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+        var clusterer = new kakao.maps.MarkerClusterer({
+            map: map,
+            averageCenter: true, 
+            minLevel: 10
+        });
+    
+        $.getJSON("http://localhost:8080/location", function(data) {
+            var markers = $(data.positions).map(function(i, position) {
+                return new kakao.maps.Marker({
+                    position : new kakao.maps.LatLng(position.lat, position.lng)
+                });
+            });
+            clusterer.addMarkers(markers);
+        });  
+</script>
+```
+
 <p align=center>
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/img4.PNG?raw=true">
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/image.PNG?raw=true">
