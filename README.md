@@ -21,3 +21,8 @@ A Web **Map** Service for the **Corona-virus**
 </p>
 
 > This image is of Republic of Korea, February 8, 2020.
+
+## References
+
+[질병관리본부](http://www.cdc.go.kr/index.es?sid=a2)
+[Kakao Map](http://apis.map.kakao.com/)
