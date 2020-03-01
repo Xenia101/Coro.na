@@ -2,6 +2,10 @@
 
 A Web **Map** Service for the **Corona-virus**
 
+Data : [질병관리본부](http://www.cdc.go.kr/index.es?sid=a2)
+
+Map API : [Kakao Map](http://apis.map.kakao.com/)
+
 ## Execution / Test Environment
 
 - Window 10
@@ -25,4 +29,5 @@ A Web **Map** Service for the **Corona-virus**
 ## References
 
 [질병관리본부](http://www.cdc.go.kr/index.es?sid=a2)
+
 [Kakao Map](http://apis.map.kakao.com/)
