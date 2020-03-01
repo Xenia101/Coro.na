@@ -14,3 +14,8 @@ A Web **Map** Service for the **Corona-virus**
 </p>
 
 > This image is of Republic of Korea, February 8, 2020.
+
+## Execution / Test Environment
+
+- Window 10
+- Node.js **latest version**
