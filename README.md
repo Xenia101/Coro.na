@@ -2,6 +2,13 @@
 
 A Web **Map** Service for the **Corona-virus**
 
+## Execution / Test Environment
+
+- Window 10
+- Node.js **latest version**
+
+## Example
+
 <p align=center>
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/img4.PNG?raw=true">
   <img width="300px" src="https://github.com/Xenia101/Coro.na/blob/master/img/image.PNG?raw=true">
@@ -14,8 +21,3 @@ A Web **Map** Service for the **Corona-virus**
 </p>
 
 > This image is of Republic of Korea, February 8, 2020.
-
-## Execution / Test Environment
-
-- Window 10
-- Node.js **latest version**
