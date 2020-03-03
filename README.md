@@ -9,7 +9,7 @@ A Web **Map** Service for the **Corona-virus**
 ## Execution / Test Environment
 
 - Window 10
-- Node.js **latest version**
+- Python **3.6**
 
 ## Example
 
