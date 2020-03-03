@@ -8,9 +8,11 @@ A Web **Map** Service for the **Corona-virus**
 
 ## Example
 
-```javascript
+```html
 <div id="map" class="main" style="height: 100vh"></div>
+```
 
+```javascript
 <script>
     var mapContainer = document.getElementById('map'),
         mapOption = { 
