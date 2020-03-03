@@ -1,16 +1,17 @@
 from flask import Flask, render_template
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+import urllib.request
+import urllib.parse
 import requests
 import json
 
-import urllib.request
-import urllib.parse
-
-headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0'}
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0'
+}
 
 app = Flask(__name__)
-app.debug = True
+
 @app.route("/")
 def home():
     return render_template('index.html', data=GetTotalCount())
