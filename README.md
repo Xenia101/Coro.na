@@ -47,7 +47,7 @@ A Web **Map** Service for the **Corona-virus**
   <img width="300px"src="https://github.com/Xenia101/Coro.na/blob/master/img/img3.PNG?raw=true">
 </p>
 
-> This image is of Republic of Korea, February 8, 2020.
+> This image is of Republic of Korea, *February 8, 2020*.
 
 ## Browser Support
 
